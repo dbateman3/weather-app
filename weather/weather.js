@@ -13,6 +13,7 @@ let getWeather = function(lat, lng, callback) {
 					conditions: body.currently.summary,
 					precipitation: body.currently.precipProbability,
 					windSpeed: body.currently.windSpeed,
+					thisWeek: body.daily.summary,
 
 				});
 			} else {

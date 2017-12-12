@@ -32,6 +32,8 @@ geocode.geocodeAddress(argv.address, function(errorMessage, geoResults) {
 			console.log(`Conditions are ${weatherResults.conditions}`);
 			console.log(`With windspeeds of ${weatherResults.windSpeed}mph`);
 			console.log(`And a ${weatherResults.precipitation}% chance of precipitation.`);
+			console.log('This week: ');
+			console.log(`${weatherResults.thisWeek}`);
 		}
 	});
 	}
