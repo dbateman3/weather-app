@@ -1,6 +1,7 @@
 const request = require("request");
 
 
+
 let getWeather = function(lat, lng, callback) {
 	request({
 		url: `https://api.darksky.net/forecast/2df076a676988d220ee69dd45e020547/${lat},${lng}`,
@@ -9,6 +10,10 @@ let getWeather = function(lat, lng, callback) {
 			if (!error && response.statusCode === 200) {
 				callback(undefined, {
 					temperature: body.currently.temperature,
+					conditions: body.currently.summary,
+					precipitation: body.currently.precipProbability,
+					windSpeed: body.currently.windSpeed,
+
 				});
 			} else {
 				callback('Unable to get weather');

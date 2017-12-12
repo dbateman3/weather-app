@@ -27,7 +27,11 @@ geocode.geocodeAddress(argv.address, function(errorMessage, geoResults) {
 		if (errorMessage) {
 			console.log(errorMessage);
 		} else {
-			console.log(`It's currently ${weatherResults.temperature} degrees.`);
+
+			console.log(`It's currently ${weatherResults.temperature}` + '\u00B0' + 'F');
+			console.log(`Conditions are ${weatherResults.conditions}`);
+			console.log(`With windspeeds of ${weatherResults.windSpeed}mph`);
+			console.log(`And a ${weatherResults.precipitation}% chance of precipitation.`);
 		}
 	});
 	}
